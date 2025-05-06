@@ -1,12 +1,27 @@
 name: Testing Trigger - Schedule
 
 on:
-  schedule:
-    - cron: "0/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      name: string
+        description: 'Name of the person to greet'
+        required: true
+        default: 'World'
+      age:
+        description: 'Age of the person to greet'
+        required: false
+        default: 0
 
 jobs:
-  test_schedule:
+  first_job:
     runs-on: ubuntu-latest
     steps:
       - name: Every time
         run: echo "This step will always run"
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet
+        run: |
+          echo "Hello, ${{ github.event.inputs.name }}!"
+          echo "You are ${{ github.event.inputs.age }} years old."
