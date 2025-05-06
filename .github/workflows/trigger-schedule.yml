@@ -2,8 +2,8 @@ name: Testing Trigger - Schedule
 
 on:
   schedule:
-    - cron: "12 4 * * *"
-    - cron: "15 4 * * *"
+    - cron: "15 16 * * *"
+    - cron: "20 16 * * *"
 
 jobs:
   test_schedule:
