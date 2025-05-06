@@ -3,13 +3,14 @@ name: Testing Trigger - workflow_dispatch
 on:
   workflow_dispatch:
     inputs:
-      name: string
-        description: 'Name of the person to greet'
+      name:
+        description: "Name of the person to greet"
         required: true
-        default: 'World'
+        type: string
       age:
-        description: 'Age of the person to greet'
+        description: "Age of the person to greet"
         required: false
+        type: number
         default: 0
 
 jobs:
@@ -23,5 +24,5 @@ jobs:
     steps:
       - name: Greet
         run: |
-          echo "Hello, ${{ github.event.inputs.name }}!"
-          echo "You are ${{ github.event.inputs.age }} years old."
+          echo "Hello, ${{ inputs.name }}!"
+          echo "You are ${{ inputs.age }} years old."
