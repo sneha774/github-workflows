@@ -1,8 +1,7 @@
-name: Testing Trigger - Schedule
+name: Testing Trigger - workflow_dispatch
 
 on:
-  schedule:
-    - cron: "0/5 * * * *"
+  workflow_dispatch:
 
 jobs:
   test_schedule:
