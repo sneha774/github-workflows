@@ -20,6 +20,7 @@ jobs:
       - name: Every time
         run: echo "This step will always run"
   greet:
+    if: github.repository == 'octo-org/octo-repo-prod'
     runs-on: ubuntu-latest
     steps:
       - name: Greet
