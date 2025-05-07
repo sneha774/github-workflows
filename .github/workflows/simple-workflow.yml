@@ -27,8 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run Build Job
-        run: echo "This is the Build Job. Var: ${{ vars.TEST_VAR }}"
-        
+        run: echo This is the Build Job. Var ${{ vars.TEST_VAR }}
 
   Deploy-Dev:
     needs: build
